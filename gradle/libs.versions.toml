@@ -1,24 +1,33 @@
 [versions]
 agp = "8.3.2"
 kotlin = "1.9.23"
-coreKtx = "1.13.1"
+material = "1.12.0"
+
+androidxActivity = "1.9.0"
+androidxAppcompat = "1.6.1"
+androidxCoreKtx = "1.13.1"
+androidxComposeBom = "2024.05.00"
+
 junit = "4.13.2"
 junitVersion = "1.1.5"
 espressoCore = "3.5.1"
-appcompat = "1.6.1"
-material = "1.12.0"
-composeBom = "2024.05.00"
-androidxActivity = "1.9.0"
 
 [libraries]
+# AndroidX
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "androidxActivity" }
-androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
-androidx-compose = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
-junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "androidxAppcompat" }
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "androidxCoreKtx" }
+androidx-compose = { group = "androidx.compose", name = "compose-bom", version.ref = "androidxComposeBom" }
+
+# AndroidX - Test
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
-androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+
+# Material
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+
+# Test
+junit = { group = "junit", name = "junit", version.ref = "junit" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
