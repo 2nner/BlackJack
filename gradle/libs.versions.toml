@@ -1,13 +1,13 @@
 [versions]
 agp = "8.3.2"
-kotlin = "1.9.23"
+kotlin = "1.9.24"
 material = "1.12.0"
 
 androidxActivity = "1.9.0"
 androidxAppcompat = "1.6.1"
 androidxCoreKtx = "1.13.1"
 androidxComposeBom = "2024.05.00"
-androidxComposeCompiler = "1.5.13" # Usage inside build-logic
+androidxComposeCompiler = "1.5.14" # Usage inside build-logic
 androidxNavigation = "2.7.7"
 
 junit = "4.13.2"
