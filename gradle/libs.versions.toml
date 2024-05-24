@@ -7,6 +7,8 @@ androidxActivity = "1.9.0"
 androidxAppcompat = "1.6.1"
 androidxCoreKtx = "1.13.1"
 androidxComposeBom = "2024.05.00"
+androidxComposeCompiler = "1.5.14" # Usage inside build-logic
+androidxNavigation = "2.7.7"
 
 junit = "4.13.2"
 junitVersion = "1.1.5"
@@ -18,6 +20,7 @@ androidx-activity-compose = { group = "androidx.activity", name = "activity-comp
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "androidxAppcompat" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "androidxCoreKtx" }
 androidx-compose = { group = "androidx.compose", name = "compose-bom", version.ref = "androidxComposeBom" }
+androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "androidxNavigation" }
 
 # AndroidX - Test
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
@@ -28,6 +31,10 @@ material = { group = "com.google.android.material", name = "material", version.r
 
 # Test
 junit = { group = "junit", name = "junit", version.ref = "junit" }
+
+# Included build-logic
+android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
+kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
