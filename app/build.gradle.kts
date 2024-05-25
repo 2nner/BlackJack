@@ -27,7 +27,14 @@ android {
 }
 
 dependencies {
+    // core
+    implementation(projects.core.navigation)
+
+    // feature
+    implementation(projects.feature.home)
+
     implementation(platform(libs.androidx.compose))
+    implementation(libs.bundles.composeBundle)
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

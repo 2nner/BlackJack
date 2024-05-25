@@ -25,5 +25,17 @@ gradlePlugin {
             id = "com.inner.blackjack.android.application.compose"
             implementationClass = "AndroidApplicationComposeConventionPlugin"
         }
+        register("androidLibrary") {
+            id = "com.inner.blackjack.android.library"
+            implementationClass = "AndroidLibraryConventionPlugin"
+        }
+        register("androidLibraryCompose") {
+            id = "com.inner.blackjack.android.library.compose"
+            implementationClass = "AndroidLibraryComposeConventionPlugin"
+        }
+        register("androidFeature") {
+            id = "com.inner.blackjack.android.feature"
+            implementationClass = "AndroidFeatureConventionPlugin"
+        }
     }
 }

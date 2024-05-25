@@ -21,4 +21,7 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "BlackJack"
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 include(":app")
+include(":core:navigation")
+include(":feature:home")
