@@ -29,6 +29,7 @@ android {
 dependencies {
     // core
     implementation(projects.core.navigation)
+    implementation(projects.core.designsystem)
 
     // feature
     implementation(projects.feature.home)
