@@ -37,5 +37,9 @@ gradlePlugin {
             id = "com.inner.blackjack.android.feature"
             implementationClass = "AndroidFeatureConventionPlugin"
         }
+        register("androidHilt") {
+            id = "com.inner.blackjack.android.hilt"
+            implementationClass = "AndroidHiltConventionPlugin"
+        }
     }
 }

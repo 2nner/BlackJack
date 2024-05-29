@@ -1,6 +1,7 @@
 plugins {
     id("com.inner.blackjack.android.application")
     id("com.inner.blackjack.android.application.compose")
+    id("com.inner.blackjack.android.hilt")
 }
 
 android {

@@ -5,6 +5,7 @@
 
     <!-- 홈 화면 -->
     <string name="homeInputRoomCodeTextFieldTitle">입장 코드</string>
+    <string name="homeCreateRoomButtonTitle">방 생성하기</string>
     <string name="homeEnterButtonTitle">입장하기</string>
     <string name="homeRoomCodeLabelTitle">입장 코드</string>
 </resources>
