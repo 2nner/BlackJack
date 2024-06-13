@@ -1,6 +1,5 @@
 package com.inner.blackjack.feature.home
 
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.inner.blackjack.gameserver.repository.GameServerRepository
@@ -19,18 +18,22 @@ class HomeViewModel @Inject constructor(
     val event = _event.asSharedFlow()
 
     fun createRoom() {
-        this.gameServerRepository.createServer()
-            .takeIf { it > 0 }
-            ?.let { roomCode ->
-                viewModelScope.launch {
-                    _event.emit(Event.ShowSnackbar("Room Created"))
-                    _event.emit(Event.NavigateToGame(roomCode))
+        viewModelScope.launch {
+            gameServerRepository.createServer()
+                .takeIf { it > 0 }
+                ?.let { roomCode ->
+                    viewModelScope.launch {
+                        _event.emit(Event.ShowSnackbar("Room Created"))
+                        _event.emit(Event.NavigateToGame(roomCode))
+                    }
                 }
-            }
+        }
     }
 
     fun enterRoom(enterCode: Int) {
-        this.gameServerRepository.connectServer(enterCode)
+        viewModelScope.launch {
+            gameServerRepository.connectServer(enterCode)
+        }
     }
 
     sealed interface Event {

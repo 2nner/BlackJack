@@ -29,12 +29,15 @@ import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import com.inner.blackjack.designsystem.BlackJackTheme
 import com.inner.blackjack.designsystem.R
 
 @Composable
 fun HomeRoute(
     viewModel: HomeViewModel = hiltViewModel(),
+    navigateToInGame: (Int) -> Unit,
 ) {
     val snackbarHostState = remember { SnackbarHostState() }
     val vmEvent by viewModel.event.collectAsState(initial = HomeViewModel.Event.Idle)
@@ -58,7 +61,7 @@ fun HomeRoute(
                 )
             }
             is HomeViewModel.Event.NavigateToGame -> {
-                // TODO
+                navigateToInGame(event.roomCode)
             }
             else -> { /** do nothing */ }
         }
@@ -116,7 +119,9 @@ fun HomeScreen(
 
             FilledTonalButton(
                 onClick = {
-                    onEnterRoomButtonClick(homeRoomCode.toInt())
+                    onEnterRoomButtonClick(
+                        homeRoomCode.takeIf { it.isNotBlank() }?.toInt() ?: -1
+                    )
                 },
             ) {
                 Text(

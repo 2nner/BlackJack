@@ -34,6 +34,7 @@ dependencies {
 
     // feature
     implementation(projects.feature.home)
+    implementation(projects.feature.ingame)
 
     implementation(platform(libs.androidx.compose))
     implementation(libs.bundles.composeBundle)

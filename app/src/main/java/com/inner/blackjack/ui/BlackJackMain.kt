@@ -9,6 +9,9 @@ import com.inner.blackjack.navigation.BlackJackNavHost
 fun BlackJackMain() {
     BlackJackTheme {
         val navController = rememberNavController()
-        BlackJackNavHost(navHostController = navController)
+
+        BlackJackNavHost(
+            navController = navController,
+        )
     }
 }

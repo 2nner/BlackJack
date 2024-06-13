@@ -7,11 +7,15 @@ class GameServerRepositoryImpl @Inject constructor(
     private val socketService: BlackJackSocketService,
 ) : GameServerRepository {
 
-    override fun createServer(): Int {
+    override suspend fun createServer(): Int {
         return this.socketService.createSocket()
     }
 
-    override fun connectServer(enterCode: Int) {
+    override suspend fun connectServer(enterCode: Int) {
         this.socketService.connectSocket(enterCode)
+    }
+
+    override suspend fun disconnectServer() {
+        this.socketService.disconnectSocket()
     }
 }
